@@ -1,0 +1,69 @@
+{% extends "main_page/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block title_2 %} {{ title }} {% endblock %}
+
+{% load static %}
+
+{% block link %} {% static 'main_page_css/astract.css' %} {% endblock %}
+
+{% block content %}
+
+    <section class="konspeck mb-5 pb-4">
+        <div class="container">
+            <div class="row">
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'english' %}" class="text-center del-line"><div class="konsp">Английский язык</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'math' %}" class="text-center del-line"><div class="konsp">Математика</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'information' %}" class="text-center del-line"><div class="konsp">Информатика</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'social_studies' %}" class="text-center del-line"><div class="konsp">Обществознание</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'OBZ' %}" class="text-center del-line"><div class="konsp">ОБЖ</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'OID' %}" class="text-center del-line"><div class="konsp">ОИД</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'physics' %}" class="text-center del-line"><div class="konsp">Физика</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'chemistry' %}" class="text-center del-line"><div class="konsp">Химия</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'biology' %}" class="text-center del-line"><div class="konsp">Биология</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'russian_language' %}" class="text-center del-line"><div class="konsp">Русский язык</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-5">
+                        <a href="{% url 'literature' %}" class="text-center del-line"><div class="konsp">Литература</div></a>
+                    </div>
+
+                    <div class="col-xl-4 col-md-6 col-sm-12 text-center mb-1">
+                        <a href="{% url 'history' %}" class="text-center del-line"><div class="konsp">История</div></a>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+{% endblock %}

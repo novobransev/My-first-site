@@ -1,0 +1,31 @@
+{% extends "all_abs/base.html" %}
+
+{% block abs_title %}Биология{% endblock %}
+{% block abs_title_2 %}Биологии{% endblock %}
+
+
+{% block content %}
+
+    {% if abs_biology %}
+        <div class="carousel-item active">
+            <a data-fslightbox="gallery" href="{{ one.image.url }}"><img src="{{ one.image.url }}" class="d-block w-100 my_photo" alt="..."></a>
+        </div>
+        {% for biology in all %}
+            <div class="carousel-item">
+                <a data-fslightbox="gallery" href="{{ biology.image.url }}"><img src="{{ biology.image.url }}" class="d-block w-100 my_photo" alt="..."></a>
+            </div>
+        {% endfor %}
+    {% else %}
+            <div class="carousel-item active">
+                <img src="https://i01.fotocdn.net/s110/86e4b6197ffd562b/public_pin_l/2447627308.jpg" class="d-block w-100 my_photo" alt="...">
+            </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block slide %}
+    {% for i in col %}
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ i }}"
+                   class="active" aria-current="true" aria-label="Slide 1"></button>
+    {% endfor %}
+{% endblock %}

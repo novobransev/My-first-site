@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="https://cdn-icons.flaticon.com/png/512/2436/premium/2436702.png?token=exp=1656157028~hmac=d44258f33492549243a50a1cf74346a8" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'main_page_css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% block link %}{% endblock %}">
+    <title>Shelby | {% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+    <label for="active" class="close"></label>
+    <div class="wrapper">
+        <ul>
+            <li><a href="{% url 'home' %}" class="pop">Главная</a></li>
+            <li><a href="{% url 'about' %}" class="pop_about">О сайте</a></li>
+            <li><a href="{% url 'abstract' %}" class="pop">Конспекты</a></li>
+            <li><a href="{% url 'schedule' %}" class="pop">Расписание</a></li>
+            <li><a href="{% url 'homework' %}" class="pop_dz">Домашняя работа</a></li>
+        </ul>
+    </div>
+
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-uppercase text-center mb-5 color1">{% block title_2 %}{% endblock %}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        {% block content %}
+
+        {% endblock %}
+
+    <footer>
+        <hr class="hr_neon">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h6 class="text-uppercase text-center footer_neon">www.Shelby.com</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="{% static 'script/bootstrap.bundle.min.js' %}"></script>
+
+
+    <script>
+        var modal = document.getElementById('myModal');
+
+        var img = document.getElementById('myImg');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+          modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
+
+

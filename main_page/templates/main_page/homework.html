@@ -1,0 +1,39 @@
+{% extends "main_page/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block title_2 %} {{ title }} {% endblock %}
+
+{% load static %}
+
+{% block link %} {% static 'main_page_css/homework.css' %} {% endblock %}
+
+{% block content %}
+
+    <section class="dz">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-uppercase text-center mb-2 color2">Домашняя работа, которую надо выполнить</h2>
+                    <h2 class="text-uppercase text-center mb-5 color2">{{ data.date }}</h2>
+                </div>
+            </div>
+
+            {% if dz %}
+                <div class="row pt-4">
+                    <div class="col-12">
+                        {% for d in dz %}<h3 class="text-left neonshadow pb-4 color2"> {{ d.title }}</h3>{% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="row pt-4">
+                    <div class="col-12">
+                        <h2 class="text-center neonshadow pb-4 color2">К сожалению, домашнего задания нет :(</h2>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+
+    </section>
+{% endblock %}

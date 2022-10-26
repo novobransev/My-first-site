@@ -1,0 +1,58 @@
+{% extends "main_page/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block title_2 %} {{ title }} {% endblock %}
+
+{% load static %}
+
+{% block link %} {% static 'main_page_css/schedule.css' %} {% endblock %}
+
+{% block content %}
+
+    <section class="raspisanie mt-2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12 col-xl-6 mb-3 mt-4">
+                    <h3 class="text-center mb-4 {% for i in neonshadow_chet %} {{ i.title_even }} {% endfor %}">Четная неделя</h3>
+                    <button type="button" class="btn text-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <img src="{% static 'img/bs.png' %}" alt="" class="img-fluid {% for i in photo_chet %} {{ i.border_even }} {% endfor %}"></button>
+                </div>
+
+                <div class="col-sm-12 col-xl-6 mt-4">
+                    <h3 class="text-center mb-4 {% for i in neonshadow_nechet %} {{ i.title_odd }} {% endfor %}">Нечетная неделя</h3>
+                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2"><img src="{% static 'img/bs2.png' %}" alt="" class="img-fluid photo {% for i in photo_nechet %} {{ i.border_odd }} {% endfor %}"></button>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-lower redneon text-center mt-5">Телевизор отупляет и убивает много времени. Выключите его, и вы сохраните несколько клеток вашего мозга. Однако будьте осторожны — отупеть можно и за компьютером Apple.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="{% static 'img/bs.png' %}" alt="" class="img-fluid photo_chet gg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="{% static 'img/bs2.png' %}" alt="" class="img-fluid photo_nechet gg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

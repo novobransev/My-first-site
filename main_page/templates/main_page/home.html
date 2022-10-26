@@ -1,0 +1,56 @@
+{% extends "main_page/base.html" %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block title_2 %} {{ title }} {% endblock %}
+
+{% load static %}
+
+{% block link %} {% static 'main_page_css/style.css' %} {% endblock %}
+
+{% block sound %}{% endblock %}
+
+{% block content %}
+
+    <section class="main mb-5">
+        <div class="container mt-3">
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="3000">
+                                <img src="https://i.ytimg.com/vi/1d9WO7fV1R4/maxresdefault.jpg" class="d-block w-100 my_photo" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://i.ytimg.com/vi/I4WnjC0iiQQ/maxresdefault.jpg" class="d-block w-100 my_photo" alt="...">
+                            </div>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="https://img5.goodfon.ru/original/1280x1024/e/5d/tokyo-ghoul-tokiiskii-gul-kaneki-ken-1.jpg" class="d-block w-100 my_photo" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pt-5">
+                <div class="col-12">
+                    <h1 class="text-uppercase text-center mb-5 neonshadow">Рекомендации по сайту</h1>
+                    <h3 class="text-left neonshadow pb-4 rekomendacii">1. Рекомендуем смотреть расписание</h3>
+                    <h3 class="text-left neonshadow pb-4 rekomendacii">2. Рекомендуем посетить раздел конспектов, чтобы не забывали какой конспект в какое время писали</h3>
+                    <h3 class="text-left neonshadow pb-4 rekomendacii">3. Рекомендуем посещать раздел домашнего задания</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
